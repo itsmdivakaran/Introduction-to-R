@@ -1,0 +1,180 @@
+/* STAT Analytics Quarto RevealJS Theme — Global Layout, Logos, Gradient, Background */
+
+:root {
+  --brand-darkblue: #0d3c66;
+  --brand-blue: #1a6fb2;
+  --brand-teal: #48c4b5;
+  --brand-light: #f3f8fb;
+  --text-dark: #0f2238;
+  --footer-gradient: linear-gradient(90deg, #004c91, #2ba6cb);
+  --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --- General --- */
+.reveal {
+  font-family: var(--sans);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- Background swoosh visible on all slides --- */
+.reveal::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-image: url("../images/logo.png"); /* background graphic */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* faint, text unaffected */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- Bottom-right logo visible on all slides --- */
+.reveal::after {
+  content: "";
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  width: 120px;
+  height: 50px;
+  background-image: url("../images/statan.png"); /* bottom-right logo */
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --- All slides content on top --- */
+.reveal .slides {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- h1 and h2 right-aligned with underline --- */
+.reveal h1,
+.reveal h2 {
+  text-align: right;
+  color: var(--text-dark);
+  font-weight: 800;
+  margin: 0.2em 0 0.3em;
+  line-height: 1.1;
+  position: relative;
+}
+
+.reveal h1::after,
+.reveal h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 3px solid var(--brand-teal);
+  margin-top: 0.25em;
+}
+
+/* --- Lists --- */
+.reveal ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+}
+
+.reveal li {
+  margin: 0.4em 0;
+  font-size: .8em;
+}
+
+:root {
+  /* Example gradient: dark grey to black */
+  --footer-gradient: linear-gradient(to right, #004c91, #2ba6cb); 
+}
+
+/* --- Persistent footer gradient bar --- */
+.reveal::marker,
+.reveal .footer {
+  display: block;
+}
+
+.reveal .footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  background: var(--footer-gradient);
+  color: #ffffff;
+  font-size: 0.8em;
+  text-align: left;
+  line-height: 0px;
+  letter-spacing: 0.01em;
+  text-transform: lowercase;
+  z-index: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .reveal .footer {
+        font-size: 14px;
+        bottom: 1px;
+    }
+}
+
+
+/* Targets all tables on the page */
+table {
+  font-size: 0.8em; /* 90% of the surrounding text size */
+}
+
+/* --- Top-left logo (Quarto’s built-in) --- */
+.reveal .slide-logo {
+  position: fixed !important;
+  top: 12px !important;
+  left: 12px !important;
+  width: 75px !important;
+  height: 100 !important;
+  opacity: 0.9;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 5;
+}
+
+p {
+  font-size: .85em; /* 110% of the base size (makes it larger) */
+  
+}
+
+.reveal p, .reveal .slides section, .reveal .slides section>section {
+    line-height: 1;
+}
+
+/* Changes the base font size for ALL slides */
+.reveal {
+  font-size: 38px; /* The default is often 40px or 42px, so this makes it smaller */
+}
+
+reveal .slides p {
+  font-size: 0.85em; /* 90% of the slide's default font size */
+}
+
+/* --- Optional box for content highlight --- */
+.content-box {
+  background-color: rgba(240, 248, 255, 0.75);
+  border-radius: 10px;
+  padding: 1em 1.2em;
+}
+
+/* --- Slide number styling --- */
+.reveal .slide-number {
+  background: #ffffffcc;
+  border-radius: 10px;
+  font-size: 0.7em;
+  color: #333;
+  padding: 3px 8px;
+  z-index: 5;
+}

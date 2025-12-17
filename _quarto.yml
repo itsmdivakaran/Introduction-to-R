@@ -1,0 +1,8 @@
+project:
+  title: "Introduction to R"
+
+editor: visual
+
+format:
+  revealjs:
+    transition: fade
